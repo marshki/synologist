@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Fully-qualified domain name
+# Sample output: 
+# kant.cns.nyu.edu 
+
+host() {
+
+  host=$(hostname -f)
+    printf "%s\n" "$host"
+} 
+
+host
+
+# sudo synonet --get_hostname
