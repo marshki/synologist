@@ -9,4 +9,4 @@ write_header() {
   printf "%s\\n" "$@"
 }
 
-write_header
+write_header "Sample Header" "Sample Output"
