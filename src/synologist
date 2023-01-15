@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
-
 # Synology system information.
-# Sample output: 
-# Basic Information
-# Server name: constantinople
-# DSM version: 7.1.1
-# Hardware
-# Serial number: 1860P5N072600
-# Model name: RS18017xs+
-# CPU: Intel(R) Xeon(R) CPU D-1531 @ 2.20GHz
-# Total physical memory: 0.887283 gB
 
 # Field array.
 
@@ -30,9 +20,15 @@ FIELD=(
 'Uptime:'
 )
 
-# Space divider.
+# Display header message.
 
-divider=$('------------------')
+write_header() {
+
+  name=$1; shift;
+
+  printf "%s\\n""--------------------\\n$name%s\\n--------------------\\n"
+  printf "%s\\n" "$@"
+}
 
 # Fully-qualified domain name.
 
@@ -86,18 +82,15 @@ memory() {
 
 main() {
 
-  printf "%s\n" "${FIELD[0]}"
-  printf "%s\n" "$divider"
+  write_header "${FIELD[0]}"
   host
   dsm_version
-  printf "%s\n" "${FIELD[3]}"
-  printf "%s\n" "$divider"
+  write_header "${FIELD[3]}"
   serial_number
   model_name
   cpu_info
   memory
-  printf "%s\n" "${FIELD[8]}"
-  printf "%s\n" "$divider"
+  write_header "${FIELD[8]}"
  
 }
 
