@@ -83,7 +83,7 @@ memory() {
 mac_address() {
 
   mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
-    printf "%s\n" "${FIELD[9]}"
+    printf "%s\n" "${FIELD[9]} $mac"
 }
 
 # Main.
