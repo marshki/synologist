@@ -101,6 +101,14 @@ system_time() {
     printf "%s\n" "${FIELD[12]} $systemtime"
 }
 
+# Uptime: days hours:minutes
+
+time_up() {
+
+  timeup=$(uptime |awk -F '[ ,]' ' {print $4, $5, $7}')
+    printf "%s\n" "${FIELD[13]} $timeup"
+}
+
 # Main.
 
 main() {
