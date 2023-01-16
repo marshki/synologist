@@ -87,6 +87,12 @@ mac_address() {
     printf "%s\n" "$mac"
 }
 
+IP_address() {
+
+  IP=$(ip addr show |awk '/eth[0-5]/ && /172/ {print $2}')
+    printf "%s\n" "${FIELD[10]} $IP"
+}
+
 # Main.
 
 main() {
@@ -101,6 +107,7 @@ main() {
   memory
   write_header "${FIELD[8]}"
   mac_address
+  IP_address
 }
 
 main "$@"
