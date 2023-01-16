@@ -106,8 +106,11 @@ main() {
   cpu_info
   memory
   write_header "${FIELD[8]}"
-  mac_address
-  IP_address
+  # mac_address
+  # IP_address
+  write_header "${FIELD[11]}"
+  system_time
+  time_up
 }
 
 main "$@"
