@@ -78,6 +78,14 @@ memory() {
     printf "%s\n" "${FIELD[7]} $gB gB"
 }
 
+# Get MAC address for onboard NIC(s).
+
+mac_address() {
+
+  mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
+    printf "%s\n" "${FIELD[9]}"
+}
+
 # Main.
 
 main() {
@@ -91,7 +99,7 @@ main() {
   cpu_info
   memory
   write_header "${FIELD[8]}"
- 
+  mac_address
 }
 
 main "$@"
