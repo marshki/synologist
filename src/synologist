@@ -93,6 +93,14 @@ IP_address() {
     printf "%s\n" "${FIELD[10]} $IP"
 }
 
+# System (current) time.
+
+system_time() {
+
+  systemtime=$(uptime | awk '{ print $1}')
+    printf "%s\n" "${FIELD[12]} $systemtime"
+}
+
 # Main.
 
 main() {
