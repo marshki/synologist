@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# Suggested output:
-# LAN 1
-# -----
-# Connection status: Connected (Disconnected)
-# MAC address: 00-11-32-62-3D-3F
-# IP address: 172.22.114.159 
-# Network Status: 1000 Mbps, Full duplex, MYU 1500 ()
 
 # List 172 subnet IP(s).
 # Sample output: 
@@ -23,7 +16,25 @@ IP_address() {
 
 IP_address
 
+# --> TODO:
+# Desired output:
+
+# LAN 1
+# -----
+# Connection status: Connected (Disconnected)
+# --> regexp goes here
+
+# MAC address: 00-11-32-62-3D-3F -->
+# ip addr show |awk '/link\/ether/ {print $2}'
+
+# IP address: 172.22.114.159
+# --> regexp goes here
+
+
+# Network Status: 1000 Mbps, Full duplex, MYU 1500 ()
+
 # TODO:
+
 # ------
 # determine in use interface(s)
 # ip addr show | awk '/eth[0-5]/ && /state UP/ {print $2, $9}'
