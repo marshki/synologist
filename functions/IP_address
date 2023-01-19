@@ -23,9 +23,11 @@ IP_address
 # -----
 # Connection status: Connected (Disconnected)
 # --> regexp goes here
+ip a s eth0 | awk '/state/ {print $2,$9}'
+
 
 # MAC address: 00-11-32-62-3D-3F -->
-# ip addr show |awk '/link\/ether/ {print $2}'
+ip addr show |awk '/link\/ether/ {print $2}'
 
 # IP address: 172.22.114.159
 # --> regexp goes here
