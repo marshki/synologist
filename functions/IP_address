@@ -30,8 +30,8 @@ ip a s eth0 | awk '/state/ {print $2,$9}'
 ip addr show |awk '/link\/ether/ {print $2}'
 
 # IP address: 172.22.114.159
-# --> regexp goes here
 
+ip addr show |awk '/inet/ {print $2}'
 
 # Network Status: 1000 Mbps, Full duplex, MYU 1500 ()
 
