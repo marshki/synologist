@@ -29,6 +29,10 @@ ip a s eth0 | awk '/state/ {print $2,$9}'
 ip addr show |awk '/link\/ether/ {print $2}'
 
 # IP address: 172.22.114.159
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a6baad78be00e50b8e8334bd08607e466af50df
 ip addr show |awk '/inet/ {print $2}'
 
 # Network Status: 1000 Mbps, Full duplex, MYU 1500 ()
