@@ -16,4 +16,5 @@ disk_storage() {
     printf "%s\n" "Name     Used% Used Total"
     printf "%s\n" "$storage"
 }
+
 disk_storage
