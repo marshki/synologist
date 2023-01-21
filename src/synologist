@@ -108,8 +108,7 @@ system_time() {
 time_up() {
 
   timeup=$(uptime |awk -F '[ ,]' ' {print $4, $5, $7}')
-    printf "%s\n" "${FIELD[13]}"
-	printf "%s\n" "$timeup"
+    printf "%s\n" "${FIELD[13]} $timeup"
 }
 
 # Storage capacity by volume.
