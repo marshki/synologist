@@ -18,6 +18,7 @@ FIELD=(
 'Time'
 'System time:'
 'Uptime:'
+'Storage:'
 )
 
 # Display header message.
@@ -109,6 +110,18 @@ time_up() {
     printf "%s\n" "${FIELD[13]} $timeup"
 }
 
+# Storage capacity by volume.
+
+disk_storage() {
+
+  # df human-readable, all |
+  # awk to skip first line, then print fields in desired order
+
+  storage=$(df -ha /volume* |awk '(NR>1) {print $6, $5, $3, $2}')
+	printf "%s\n" "Name     Used% Used Total"
+	printf "%s\n" "$storage"
+}
+
 # Main.
 
 main() {
@@ -127,6 +140,7 @@ main() {
   write_header "${FIELD[11]}"
   system_time
   time_up
+  write_header "${FIELD[14]}"
 }
 
 main "$@"
