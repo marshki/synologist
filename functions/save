@@ -1,20 +1,5 @@
 #!/usr/bin/env bash
 
-# List 172 subnet IP(s).
-# Sample output: 
-# 172.22.115.242/23
-
-IP_address() {
-
-  # IP addr show|
-  # awk match eth 0-5 AND 172
-  # print field 2
-
-  IP=$(ip addr show |awk '/eth[0-5]/ && /172/ {print $2}')
-    printf "%s\n" "$IP"
-}
-
-IP_address
 
 # --> TODO:
 # Desired output:
@@ -61,4 +46,3 @@ ip addr show |awk '/inet/ {print $2}'
 # 00:11:32:92:c4:09
 # 172.22.114.37/23
 # fe80::211:32ff:fe92:c409/64
-
