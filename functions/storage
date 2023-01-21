@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Storage capacity. 
 # Sample output: 
 # Mounted Use% Avail Used Size
 # /volume1 66% 54T 104T 158T
