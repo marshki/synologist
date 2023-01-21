@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Sample output: 
+# Mounted Use% Avail Used Size
+# /volume1 66% 54T 104T 158T
+# /volume2 67% 47T 94T 140T
+# /volume3 1% 123T 77M 123T
+
+
+df -ha /volume* |awk '{print $6, $5, $4, $3, $2}'
