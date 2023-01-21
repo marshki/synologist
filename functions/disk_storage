@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 # Storage capacity by volume.
 # Sample output:
-# Mounted Use% Avail Used Size
-# /volume1 66% 54T 104T 158T
-# /volume2 67% 47T 94T 140T
-# /volume3 1% 123T 77M 123T
-
-# Name Used capacity% Used capacity Total capacity
+# Name     Used% Used Total
+# /volume1 66% 104T 158T
+# /volume2 67% 94T 140T
+# /volume3 1% 77M 123T
 
 disk_storage() {
 
   # df human-readable, all |
-  # awk to skip first line, then print fields in desired order
+  # awk to skip first line, then print header, fields of interest
 
   storage=$(df -ha /volume* |awk '(NR>1) {print $6, $5, $3, $2}')
-    printf "%s\n" "Name Used% Used Total"
+
+    printf "%s\n" "Name     Used% Used Total"
     printf "%s\n" "$storage"
 }
 disk_storage
