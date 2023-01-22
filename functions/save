@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# eth ports that are UP: 
+ip add show |awk '/eth/ && /state UP/'
+
+
 
 # --> TODO:
 # Desired output:
