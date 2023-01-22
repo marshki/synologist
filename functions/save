@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+# ethN state MAC IP 
+
 # eth ports that are UP: 
 ip add show |awk '/eth/ && /state UP/'
-
 
 
 # --> TODO:
