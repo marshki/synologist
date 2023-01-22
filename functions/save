@@ -5,6 +5,9 @@
 # eth ports that are UP: 
 ip add show |awk '/eth/ && /state UP/'
 
+# eth ports that are UP (full record):
+
+ip addr show |awk '/eth/ && /state UP/{f=1}f'
 
 # --> TODO:
 # Desired output:
