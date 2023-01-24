@@ -1,0 +1,11 @@
+ip addr show | awk '/^[0-9]+: eth/ && /UP/ {
+    match($2, /(eth[0-9]+)/); interface=substr($2, RSTART, RLENGTH);
+    for(i=1;i<=NF;i++){
+        if($i=="link/ether"){
+            mac=$(i+1);
+        }else if($i=="inet"){
+            ip=$(i+1);
+        }
+    }
+    print interface " " mac " " ip
+}'
