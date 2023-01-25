@@ -1,5 +1,11 @@
+#!/usr/bin/env bash
+# Get IP address AND MAC address of active Ethernet devices.
+# TODO: Trim inactive from standard output.
+
 # Get the interfaces that are up
-interfaces=$(ip addr show | awk '/eth/ && /UP/ {print $2}')
+interfaces=$(ip addr show | awk '/eth/ && /UP/')
+
+#interfaces=$(ip addr show | awk '/eth/ && /UP/ {print $2}')
 
 # Iterate through the interfaces
 for interface in $interfaces; do
