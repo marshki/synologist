@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# Get IP address AND MAC address of active Ethernet devices.
+# Get MAC address and IP address of active Ethernet devices.
 # Sample output: 
 # eth5: 00:11:32:79:95:20 169.254.4.191/16
 # eth4: 00:11:32:79:95:1f 172.22.115.242/23
 
-
-
-# Get 'eth' devices that have a status of 'UP'
+# Parse output of ip addr using awk to extract:
+# 'eth' with status of 'UP'
 
 interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2}')
 
-# Iterate through the interfaces
+# Iterate through interfaces
+
 for interface in $interfaces; do
 
-# Get MAC address AND IP address (not IPv6)
+# use awk to parse MAC address 
+# use awk to parse IP address (not inet IPv6, so we exit after first match)
 
   mac=$(ip addr show $interface | awk '/link\/ether/ {print $2}')
   ip=$(ip addr show $interface | awk '/inet/ {print $2;exit;}')
