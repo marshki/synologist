@@ -10,7 +10,7 @@ IP_address() {
   # awk match eth 0-5 AND 172
   # print field 2
 
-  IP=$(ip addr show |awk '/eth[0-5]/ && /172/ {print $2}')
+  IP=$(ip addr show |awk '/eth[0-5]/ && /172/ || /169/ {print $2}')
     printf "%s\n" "$IP"
 }
 
