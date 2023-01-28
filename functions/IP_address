@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-# List 172 subnet IP(s).
-# Sample output: 
-# 172.22.115.242/23
+# List connected (172,168) subnet IP(s).
+# Sample output:
+# eth0 172.22.114.159/23
+# eth1 169.254.84.242/16
 
 IP_address() {
 
@@ -10,7 +11,7 @@ IP_address() {
   # awk match eth 0-5 AND 172
   # print field 2
 
-  IP=$(ip addr show |awk '/eth[0-5]/ && /172/ || /169/ {print $2}')
+  IP=$(ip addr show |awk '/eth[0-5]/ && /172/ || /169/ {print $1,$2}')
     printf "%s\n" "$IP"
 }
 
