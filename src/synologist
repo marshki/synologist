@@ -92,7 +92,8 @@ mac_address() {
 IP_address() {
 
   IP=$(ip addr show |awk '/eth[0-5]/ && /172/ {print $2}')
-    printf "%s\n" "${FIELD[10]} $IP"
+    printf "%s\n" "${FIELD[10]}"     
+    printf "%s\n" "$IP"
 }
 
 # System (current) time.
@@ -134,8 +135,8 @@ main() {
   cpu_info
   memory
   write_header "${FIELD[8]}"
-  # mac_address
-  # IP_address
+  mac_address
+  IP_address
   write_header "${FIELD[11]}"
   system_time
   time_up
