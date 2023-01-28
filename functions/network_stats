@@ -4,21 +4,26 @@
 # eth5: 00:11:32:79:95:20 169.254.4.191/16
 # eth4: 00:11:32:79:95:1f 172.22.115.242/23
 
-# Parse output of ip addr using awk to extract:
-# 'eth' with status of 'UP'
 
-interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2}')
+network_stats() {
+  # Parse output of ip addr using awk to extract:
+  # 'eth' with status of 'UP'
 
-# Iterate through interfaces
+  interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2}')
 
-for interface in $interfaces; do
+  # Iterate through interfaces
 
-# use awk to parse MAC address 
-# use awk to parse IP address (not inet IPv6, so we exit after first match)
+  for interface in $interfaces; do
 
-  mac=$(ip addr show $interface | awk '/link\/ether/ {print $2}')
-  ip=$(ip addr show $interface | awk '/inet/ {print $2;exit;}')
+  # use awk to parse MAC address 
+  # use awk to parse IP address (not inet IPv6, so we exit after first match)
+
+    mac=$(ip addr show $interface | awk '/link\/ether/ {print $2}')
+    ip=$(ip addr show $interface | awk '/inet/ {print $2;exit;}')
 
   printf "%s\n" "$interface $mac $ip"
 
 done
+}
+
+network_stats
