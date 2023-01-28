@@ -4,7 +4,6 @@
 # eth5: 00:11:32:79:95:20 169.254.4.191/16
 # eth4: 00:11:32:79:95:1f 172.22.115.242/23
 
-
 network_stats() {
   # Parse output of ip addr using awk to extract:
   # 'eth' with status of 'UP'
@@ -15,8 +14,8 @@ network_stats() {
 
   for interface in $interfaces; do
 
-  # use awk to parse MAC address 
-  # use awk to parse IP address (not inet IPv6, so we exit after first match)
+  # use awk to parse MAC address ('link ether') 
+  # use awk to parse IP address ('inet' NOT 'inet IPv6', so exit after first match)
 
     mac=$(ip addr show $interface | awk '/link\/ether/ {print $2}')
     ip=$(ip addr show $interface | awk '/inet/ {print $2;exit;}')
