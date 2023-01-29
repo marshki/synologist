@@ -20,3 +20,8 @@ IP_address() {
 }
 
 IP_address
+
+# TODO: sort out why eth* devices aren't ordered.
+# As an alternative approach: 
+# ifconfig -a |awk '/eth[0-5]/ || /inet addr/ {print $1, $2}'
+# but needs a trim
