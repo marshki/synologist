@@ -21,11 +21,11 @@ IP_address() {
 
 IP_address
 
-# TODO: sort out why eth* devices aren't ordered.
 # As an alternative approach: 
+# Option 1:
 # ifconfig -a |awk '/eth[0-5]/ || /inet addr/ {print $1, $2}'
 # but needs a trim
-
+# Option 2:
 #ip --brief address show |awk '/eth[0-5]/ {print $1, $3}'|sort
 #Sample output:
 #eth0 DOWN 169.254.21.82/16
