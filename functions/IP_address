@@ -15,7 +15,7 @@ IP_address() {
   # awk match eth[0-5] AND inet
   # print fields 7,2
 
-  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2}')
+  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2}' |sort)
     printf "%s\n" "$IP"
 }
 
