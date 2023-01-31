@@ -26,3 +26,5 @@ done
 }
 
 network_stats
+
+# TODO: sort output be numerical eth order.
