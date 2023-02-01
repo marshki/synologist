@@ -15,7 +15,7 @@ IP_address() {
   # print fields 7,2
   # sort
 
-  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"'} )
+  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}' )
     printf "%s\n" "$IP"
 }
 
