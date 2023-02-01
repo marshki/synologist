@@ -17,8 +17,8 @@ network_stats() {
   # use awk to parse MAC address ('link ether')
   # use awk to parse IP address ('inet' NOT 'inet IPv6', so exit after first match)
 
-    mac=$(ip addr show $interface | awk '/link\/ether/ {print $2}')
-    ip=$(ip addr show $interface | awk '/inet/ {print $2;exit;}')
+    mac=$(ip addr show "$interface" | awk '/link\/ether/ {print $2}')
+    ip=$(ip addr show "$interface" | awk '/inet/ {print $2;exit;}')
 
   printf "%s\n" "$interface $mac $ip"
 
