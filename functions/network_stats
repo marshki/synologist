@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Get MAC address and IP address of active Ethernet devices.
-# Sample output: 
+# Get MAC address and IP address of "UP" Ethernet devices.
+# Sample output:
 # eth5: 00:11:32:79:95:20 169.254.4.191/16
 # eth4: 00:11:32:79:95:1f 172.22.115.242/23
 
