@@ -6,15 +6,15 @@
 
 network_stats() {
   # Parse output of ip addr using awk to extract:
-  # 'eth' with status of 'UP'
+  # 'eth' with status of 'UP', then sort 'eth' numerically
 
-  interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2}')
+  interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2| "sort"}')
 
   # Iterate through interfaces
 
   for interface in $interfaces; do
 
-  # use awk to parse MAC address ('link ether') 
+  # use awk to parse MAC address ('link ether')
   # use awk to parse IP address ('inet' NOT 'inet IPv6', so exit after first match)
 
     mac=$(ip addr show $interface | awk '/link\/ether/ {print $2}')
@@ -26,5 +26,3 @@ done
 }
 
 network_stats
-
-# TODO: sort output be numerical eth order.
