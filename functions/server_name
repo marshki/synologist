@@ -7,6 +7,6 @@ host() {
 
   host=$(hostname -f)
     printf "%s\n" "$host"
-} 
+}
 
 host
