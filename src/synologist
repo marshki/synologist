@@ -94,11 +94,29 @@ mac_address() {
     printf "%s\n" "$mac"
 }
 
+# List all IP addressed for eth devices.
+
 IP_address() {
 
-  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}' )
-    printf "%s\n" "${FIELD[10]}"     
+  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}')
+    printf "%s\n" "${FIELD[10]}"
     printf "%s\n" "$IP"
+}
+
+# Get MAC address and IP address of "UP" Ethernet devices.
+
+network_stats() {
+
+  interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2| "sort"}')
+
+  for interface in $interfaces; do
+
+    mac=$(ip addr show "$interface" | awk '/link\/ether/ {print $2}')
+    ip=$(ip addr show "$interface" | awk '/inet/ {print $2;exit;}')
+
+  printf "%s\n" "$interface $mac $ip"
+
+done
 }
 
 # System (current) time.
