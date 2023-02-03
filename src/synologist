@@ -8,23 +8,27 @@
 
 # Field array.
 
-FIELD=(
+
+HEADER=(
 'Basic Information'
+'Hardware'
+'Network'
+'Time'
+'Storage'
+)
+
+FIELD=(
 'Server name:'
 'DSM version:'
-'Hardware'
 'Serial number:'
 'Model name:'
 'CPU:'
 'Total physical memory:'
-'Network'
 'MAC address:'
 'IP address:'
 'Network stats:'
-'Time'
 'System time:'
 'Uptime:'
-'Storage'
 'Volume(s)'
 )
 
