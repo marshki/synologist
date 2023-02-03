@@ -47,7 +47,7 @@ write_header() {
 host() {
 
   host=$(hostname -f)
-    printf "%s\n" "${FIELD[1]} $host"
+    printf "%s\n" "${FIELD[0]} $host"
 }
 
 # Extract DSM product version.
@@ -55,7 +55,7 @@ host() {
 dsm_version() {
 
   dsm=$(awk -F '"' 'NR==6 {print $2}' /etc.defaults/VERSION)
-    printf "%s\n" "${FIELD[2]} $dsm"
+    printf "%s\n" "${FIELD[1]} $dsm"
 }
 
 # Synology serial no.
@@ -63,7 +63,7 @@ dsm_version() {
 serial_number() {
 
   serial=$(cat /proc/sys/kernel/syno_serial)
-    printf "%s\n" "${FIELD[4]} $serial"
+    printf "%s\n" "${FIELD[2]} $serial"
 }
 
 # Synology model name.
@@ -71,7 +71,7 @@ serial_number() {
 model_name() {
   
   model=$(cat /proc/sys/kernel/syno_hw_version)
-    printf "%s\n" "${FIELD[5]} $model"
+    printf "%s\n" "${FIELD[3]} $model"
 }
 
 # Extract CPU model name.
@@ -79,7 +79,7 @@ model_name() {
 cpu_info() {
 
   cpu=$(awk '/model name/ || /Processor/ { sub(/^.*: /, ""); print; exit}' /proc/cpuinfo)
-    printf "%s\n" "${FIELD[6]} $cpu"
+    printf "%s\n" "${FIELD[4]} $cpu"
 }
 
 # Total memory (gB) using kB to gB conversion.
@@ -87,7 +87,7 @@ cpu_info() {
 memory() {
 
   gB=$(awk '/MemTotal/ {print $2/1024/1024}' /proc/meminfo)
-    printf "%s\n" "${FIELD[7]} $gB gB"
+    printf "%s\n" "${FIELD[5]} $gB gB"
 }
 
 # Get MAC address for onboard NIC(s).
@@ -95,7 +95,7 @@ memory() {
 mac_address() {
 
   mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
-    printf "%s\n" "${FIELD[9]}"
+    printf "%s\n" "${FIELD[6]}"
     printf "%s\n" "$mac"
 }
 
@@ -104,7 +104,7 @@ mac_address() {
 IP_address() {
 
   IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}')
-    printf "%s\n" "${FIELD[10]}"
+    printf "%s\n" "${FIELD[7]}"
     printf "%s\n" "$IP"
 }
 
@@ -119,7 +119,8 @@ network_stats() {
     mac=$(ip addr show "$interface" | awk '/link\/ether/ {print $2}')
     ip=$(ip addr show "$interface" | awk '/inet/ {print $2;exit;}')
 
-  printf "%s\n" "${FIELD[12]} $interface $mac $ip"
+  printf "%s\n" "${FIELD[8]}" 
+  printf "%s\n" "$interface $mac $ip"
 
 done
 }
@@ -129,7 +130,7 @@ done
 system_time() {
 
   systemtime=$(uptime | awk '{ print $1}')
-    printf "%s\n" "${FIELD[13]} $systemtime"
+    printf "%s\n" "${FIELD[9]} $systemtime"
 }
 
 # Uptime: days hours:minutes
@@ -137,7 +138,7 @@ system_time() {
 time_up() {
 
   timeup=$(uptime |awk -F '[ ,]' ' {print $4, $5, $7}')
-    printf "%s\n" "${FIELD[14]} $timeup"
+    printf "%s\n" "${FIELD[10]} $timeup"
 }
 
 # Storage capacity by volume.
@@ -145,7 +146,7 @@ time_up() {
 disk_storage() {
 
   storage=$(df -ha /volume* |awk '(NR>1) {print $6, $5, $3, $2}')
-    printf "%s\n" "${FIELD[15]}"
+    printf "%s\n" "${FIELD[11]}"
 	printf "%s\n" "Name     Used% Used Total"
 	printf "%s\n" "$storage"
 }
@@ -154,22 +155,22 @@ disk_storage() {
 
 main() {
 
-  write_header "${FIELD[0]}"
+  write_header "${HEADER[0]}"
   host
   dsm_version
-  write_header "${FIELD[3]}"
+  write_header "${HEADER[1]}"
   serial_number
   model_name
   cpu_info
   memory
-  write_header "${FIELD[8]}"
+  write_header "${HEADER[2]}"
   mac_address
   IP_address
   network_stats
-  write_header "${FIELD[11]}"
+  write_header "${HEADER[3]}"
   system_time
   time_up
-  write_header "${FIELD[14]}"
+  write_header "${HEADER[4]}"
   disk_storage
 }
 
