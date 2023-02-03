@@ -20,6 +20,7 @@ FIELD=(
 'Network'
 'MAC address:'
 'IP address:'
+'Network stats:'
 'Time'
 'System time:'
 'Uptime:'
@@ -114,7 +115,7 @@ network_stats() {
     mac=$(ip addr show "$interface" | awk '/link\/ether/ {print $2}')
     ip=$(ip addr show "$interface" | awk '/inet/ {print $2;exit;}')
 
-  printf "%s\n" "$interface $mac $ip"
+  printf "%s\n" "${FIELD[12]} $interface $mac $ip"
 
 done
 }
@@ -124,7 +125,7 @@ done
 system_time() {
 
   systemtime=$(uptime | awk '{ print $1}')
-    printf "%s\n" "${FIELD[12]} $systemtime"
+    printf "%s\n" "${FIELD[13]} $systemtime"
 }
 
 # Uptime: days hours:minutes
@@ -132,7 +133,7 @@ system_time() {
 time_up() {
 
   timeup=$(uptime |awk -F '[ ,]' ' {print $4, $5, $7}')
-    printf "%s\n" "${FIELD[13]} $timeup"
+    printf "%s\n" "${FIELD[14]} $timeup"
 }
 
 # Storage capacity by volume.
@@ -160,6 +161,7 @@ main() {
   write_header "${FIELD[8]}"
   mac_address
   IP_address
+  network_stats
   write_header "${FIELD[11]}"
   system_time
   time_up
