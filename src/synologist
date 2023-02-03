@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 # Synology system information.
 
-# TODO: 
-# two (2) arrays; one (1) each for: headers, fields
-# Review, update, test new functions
-# Incorporate 'network_stats'
-
-# Field array.
-
+# Header array.
 
 HEADER=(
 'Basic Information'
@@ -16,6 +10,8 @@ HEADER=(
 'Time'
 'Storage'
 )
+
+# Field array.
 
 FIELD=(
 'Server name:'
