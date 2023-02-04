@@ -12,14 +12,14 @@ Sample output:
     Basic Information
     --------------------
 
-    Server name: constantinople
+    Server name: istanbul
     DSM version: 7.1.1
 
     --------------------
     Hardware
     --------------------
 
-    Serial number: 1860P5N072600
+    Serial number: 1480GH072600
     Model name: RS18017xs+
     CPU: Intel(R) Xeon(R) CPU D-1531 @ 2.20GHz
     Total physical memory: 31.1293 gB
