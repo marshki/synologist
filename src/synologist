@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+#
+# synologist
+#
 # Synology system information.
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 2023.02.04
+# License: MIT
 
 # Header array.
 
@@ -95,7 +102,7 @@ mac_address() {
     printf "%s\n" "$mac"
 }
 
-# List all IP addressed for eth devices.
+# List all IP addresses for eth devices.
 
 IP_address() {
 
