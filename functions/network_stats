@@ -20,6 +20,7 @@ network_stats() {
     mac=$(ip addr show "$interface" | awk '/link\/ether/ {print $2}')
     ip=$(ip addr show "$interface" | awk '/inet/ {print $2;exit;}')
 
+  printf "|\tInterface\t|\tMAC\t|\tIP Address\t|\n"
   printf "%s\n" "$interface $mac $ip"
 
 done
@@ -27,6 +28,6 @@ done
 
 network_stats
 
-# Add columns? 
+# Add columns?
 # e.g.: printf 'Interface\tMAC\tIP Address\t\n'
-printf "|\tInterface\t|\tMAC\t|\tIP Address\t|\n" 
+# printf "|\tInterface\t|\tMAC\t|\tIP Address\t|\n"
