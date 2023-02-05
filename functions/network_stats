@@ -27,6 +27,6 @@ done
 
 network_stats
 
-
 # Add columns? 
 # e.g.: printf 'Interface\tMAC\tIP Address\t\n'
+printf "|\tInterface\t|\tMAC\t|\tIP Address\t|\n" 
