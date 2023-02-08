@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+mac_address() {
+
+  # ifconfig to list all interfaces
+  # awk to extract eth[0-5] AND HWaddr
+  # print fields 1, 5
+
+  mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
+    #printf "%s\n" "$mac"
+}
+
+
+
+IP_address() {
+
+  # IP addr show|
+  # awk match eth[0-5] AND inet
+  # print fields 7,2
+  # sort
+
+  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}' )
+    #printf "%s\n" "$IP"
+}
+
+
+mac_address
+IP_address
+
+printf "%s\n" "$mac $ip"
