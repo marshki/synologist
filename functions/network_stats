@@ -26,5 +26,3 @@ done
 }
 
 network_stats
-
-# https://unix.stackexchange.com/questions/543256/format-columns-in-output-with-awk
