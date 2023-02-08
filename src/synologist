@@ -29,7 +29,7 @@ FIELD=(
 'Total physical memory:'
 'MAC address:'
 'IP address:'
-'Network stats:'
+'Network stats (active):'
 'System time:'
 'Uptime:'
 'Volume(s):'
