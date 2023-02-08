@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# ip addr show | awk '/link\/ether/ {print $2}'
+# ip addr show | awk '/eth[0-5]/ {print $2}'
+
 mac_address() {
 
   # ifconfig to list all interfaces
@@ -22,6 +25,9 @@ IP_address() {
   IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}' )
     #printf "%s\n" "$IP"
 }
+
+for items in:
+
 
 
 mac_address
