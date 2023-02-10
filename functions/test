@@ -5,7 +5,7 @@
 
 ip addr show dev eth0 |awk '/link/ || /inet/ {print $2}'
 
-# ip -o -4 addr show | awk '{print $1" " $2": "$4}'
+# ip -o -4 addr show | awk '{print $2": "$4}'
 
 mac_address() {
 
