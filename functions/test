@@ -1,51 +1,10 @@
 #!/usr/bin/env bash
+# Extract Etherent device assignment; MAC address; IP address. 
 
-# mapfile -t test < <(ip addr show | awk '/eth/ {print $2}')
+# Iterate through Ethernet devices (0-5) using ip addr command
+# awk to match eth and extract column contents
 
-# eth mac ip (but unordered)
-# ip addr show | awk '/eth/ {print $2}' 
-# eth3:
-# 00:11:32:79:95:1e
-# 169.254.206.44/16
-# eth2:
-# 00:11:32:79:95:1d
-# 169.254.69.117/16
+for i in $(seq -w 0 5 $END);
+  do ip addr show eth$i|awk '/eth/ {print $2}';
 
-# mac ip 
-# ip addr show dev eth0 |awk '/link/ || /inet/ {print $2}'
-# 00:11:32:79:95:1b
-# 169.254.21.82/16
-
-
-#!/bin/bash
-#This script will sort the input based on the number of the ethernet interface and then print it in the format eth: mac ip.
-
-input="eth3:
-00:11:32:c6:26:72
-169.254.221.255/16
-eth2:
-00:11:32:c6:26:71
-169.254.104.134/16
-eth1:
-00:11:32:c6:26:70
-169.254.131.23/16
-eth0:
-00:11:32:c6:26:6f
-169.254.128.6/16
-eth5:
-00:11:32:c6:26:74
-169.254.65.214/16
-eth4:
-00:11:32:c6:26:73
-172.22.114.50/23"
-
-lines=($input)
-for ((i=0; i<${#lines[@]}; i+=3))
-do
-    eth="${lines[i]}"
-    mac="${lines[i+1]}"
-    ip="${lines[i+2]}"
-    eth_number=`echo $eth | awk -F ":" '{print $1}' | awk -F "h" '{print $2}'`
-    echo "$eth_number $eth $mac $ip"
-done | sort -n | awk '{print $2"\n"$3"\n"$4}'
-
+done
