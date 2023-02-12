@@ -17,8 +17,8 @@
 
 ethernet_devices() {
 
-  for i in $(seq -w 0 5 $END);
-    do ip addr show eth$i |awk '/eth/ {print $2}';
+  for i in $(seq -w 0 5 "$END");
+    do ip addr show eth"$i" |awk '/eth/ {print $2}';
   done
 
 }
