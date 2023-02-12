@@ -5,6 +5,5 @@
 # awk to match eth and extract column contents
 
 for i in $(seq -w 0 5 $END);
-  do ip addr show eth$i|awk '/eth/ {print $2}';
-
+  do ip addr show eth$i |awk '/eth/ {print $2}';
 done
