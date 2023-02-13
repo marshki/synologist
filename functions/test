@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Extract Etherent device assignment, MAC address, and IP address by ascending eth order. 
+# Extract ethernet device assignment, MAC address, and IP address.
+# Print in ascending order.
 # Sample output:
 # eth0:
 # 00:11:32:79:95:1b
@@ -12,10 +13,12 @@
 # Device "eth4" does not exist.
 # Device "eth5" does not exist.
 
-# Iterate through Ethernet devices (0-5) using ip addr command
-# awk to match eth and extract column contents.
+for i in $(seq -w 0 5 $END); do ip addr show eth$i| awk '/eth/ {print $2}'; done
+
 
 ethernet_devices() {
+  # Iterate through ethernet devices (0-5) via 'ip' command
+  # awk to match eth and extract column contents.
 
   for i in $(seq -w 0 5 "$END");
     do ip addr show eth"$i" |awk '/eth/ {print $2}';
