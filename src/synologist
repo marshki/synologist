@@ -27,8 +27,9 @@ FIELD=(
 'Model name:'
 'CPU:'
 'Total physical memory:'
-'MAC address:'
-'IP address:'
+#'MAC address:'
+#'IP address:'
+'Ethernet stats:'
 'Network stats (active):'
 'System time:'
 'Uptime:'
@@ -114,14 +115,15 @@ memory() {
 # Iterate through ethernet devices (0-5) via 'ip' command
 
 ethernet_stats() {
-	  
+
+  printf "%s\n" "${FIELD[6]}"
+
   for i in $(seq -w 0 5 $END);
     do ip addr show eth$i |awk '/eth/ {print $2}';
 
-  printf "\n"
+  printf "\n" 
 
 done
-	                 
 }
 
 # Get MAC address and IP address of "UP" Ethernet devices.
