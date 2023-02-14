@@ -95,20 +95,33 @@ memory() {
 
 # Get MAC address for onboard NIC(s).
 
-mac_address() {
+#mac_address() {
 
-  mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
-    printf "%s\n" "${FIELD[6]}"
-    printf "%s\n" "$mac"
-}
+#  mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
+#    printf "%s\n" "${FIELD[6]}"
+#    printf "%s\n" "$mac"
+#}
 
 # List all IP addresses for eth devices.
 
-IP_address() {
+#IP_address() {
 
-  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}')
-    printf "%s\n" "${FIELD[7]}"
-    printf "%s\n" "$IP"
+#  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}')
+#    printf "%s\n" "${FIELD[7]}"
+#    printf "%s\n" "$IP"
+#}
+
+# Iterate through ethernet devices (0-5) via 'ip' command
+
+ethernet_stats() {
+	  
+  for i in $(seq -w 0 5 $END);
+    do ip addr show eth$i |awk '/eth/ {print $2}';
+
+  printf "\n"
+
+done
+	                 
 }
 
 # Get MAC address and IP address of "UP" Ethernet devices.
@@ -169,6 +182,7 @@ main() {
   write_header "${HEADER[2]}"
   mac_address
   IP_address
+  ethernet_stats
   network_stats
   write_header "${HEADER[3]}"
   system_time
