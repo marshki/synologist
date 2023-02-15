@@ -7,56 +7,57 @@ Approximates select output of Synology's "Info Center."
 
 Sample output: 
 
-
     --------------------
     Basic Information
     --------------------
 
-    Server name: istanbul
+    Server name: BACKUP2
     DSM version: 7.1.1
 
     --------------------
     Hardware
     --------------------
 
-    Serial number: 1480GH072600
-    Model name: RS18017xs+
-    CPU: Intel(R) Xeon(R) CPU D-1531 @ 2.20GHz
-    Total physical memory: 31.1293 gB
+    Serial number: 1670NMN287200
+    Model name: DS416play-j
+    CPU: Intel(R) Celeron(R) CPU  N3060  @ 1.60GHz
+    Total physical memory: 0.887283 gB
 
     --------------------
     Network
     --------------------
 
-    MAC address:
-    eth0 00:11:32:92:C4:05
-    eth1 00:11:32:92:C4:06
-    eth2 00:11:32:92:C4:07
-    eth3 00:11:32:92:C4:08
-    eth4 00:11:32:92:C4:09
-    eth5 00:11:32:92:C4:0A
-    IP address:
-    eth0 169.254.180.137/16
-    eth1 169.254.179.227/16
-    eth2 169.254.134.16/16
-    eth3 169.254.85.153/16
-    eth4 172.22.114.37/23
-    eth5 10.199.199.22/24
-    Network stats:
-    eth4: 00:11:32:92:c4:09 172.22.114.37/23
+    Ethernet stats:
+    eth0:
+    00:11:32:62:3d:3f
+    172.22.114.159/23
+
+    eth1:
+    00:11:32:62:3d:40
+    169.254.84.242/16
+
+    Device "eth2" does not exist.
+
+    Device "eth3" does not exist.
+
+    Device "eth4" does not exist.
+
+    Device "eth5" does not exist.
+
+    Network stats (active):
+    eth0: 00:11:32:62:3d:3f 172.22.114.159/23
 
     --------------------
     Time
     --------------------
 
-    System time: 12:09:42
-    Uptime: 111 days 12:46
+    System time: 11:50:39
+    Uptime: 36 days 23:11
 
     --------------------
     Storage
     --------------------
 
-    Volume(s)
+    Volume(s):
     Name     Used% Used Total
-    /volume1 66% 104T 158T
-    /volume2 1% 19M 123T
+    /volume1 42% 2.6T 6.1T
