@@ -160,8 +160,6 @@ main() {
   cpu_info
   memory
   write_header "${HEADER[2]}"
-  #mac_address
-  #IP_address
   ethernet_stats
   network_stats
   write_header "${HEADER[3]}"
