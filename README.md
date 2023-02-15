@@ -11,7 +11,7 @@ Sample output:
     Basic Information
     --------------------
 
-    Server name: BACKUP2
+    Server name: synologist
     DSM version: 7.1.1
 
     --------------------
@@ -27,7 +27,7 @@ Sample output:
     Network
     --------------------
 
-    Ethernet stats:
+    Ethernet stats (all):
     eth0:
     00:11:32:62:3d:3f
     172.22.114.159/23
