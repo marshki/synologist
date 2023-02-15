@@ -5,6 +5,8 @@
 
 host() {
 
+  # hostname -f
+  
   host=$(hostname -f)
     printf "%s\n" "$host"
 }
