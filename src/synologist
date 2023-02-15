@@ -98,7 +98,6 @@ ethernet_stats() {
 
   for i in $(seq -w 0 5 $END);
     do ip addr show eth$i |awk '/eth/ {print $2}';
-
   printf "\n" 
 
 done
@@ -115,7 +114,6 @@ network_stats() {
   for interface in $interfaces; do
     mac=$(ip addr show "$interface" | awk '/link\/ether/ {print $2}')
     ip=$(ip addr show "$interface" | awk '/inet/ {print $2;exit;}')
-
     printf "%s\n" "$interface $mac $ip"
 
 done
@@ -170,6 +168,3 @@ main() {
 }
 
 main "$@"
-
-
-
