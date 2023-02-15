@@ -27,8 +27,6 @@ FIELD=(
 'Model name:'
 'CPU:'
 'Total physical memory:'
-#'MAC address:'
-#'IP address:'
 'Ethernet stats:'
 'Network stats (active):'
 'System time:'
@@ -94,26 +92,6 @@ memory() {
     printf "%s\n" "${FIELD[5]} $gB gB"
 }
 
-# Get MAC address for onboard NIC(s).
-
-#mac_address() {
-
-#  mac=$(ifconfig -a |awk '/eth[0-5]/ && /HWaddr/ {print $1, $5}')
-#    printf "%s\n" "${FIELD[6]}"
-#    printf "%s\n" "$mac"
-#}
-
-# List all IP addresses for eth devices.
-
-#IP_address() {
-
-#  IP=$(ip addr show |awk '/eth[0-5]/ && /inet/ {print $7, $2 |"sort"}')
-#    printf "%s\n" "${FIELD[7]}"
-#    printf "%s\n" "$IP"
-#}
-
-# Iterate through ethernet devices (0-5) via 'ip' command
-
 ethernet_stats() {
 
   printf "%s\n" "${FIELD[6]}"
@@ -130,7 +108,7 @@ done
 
 network_stats() {
 
-  printf "%s\n" "${FIELD[8]}" 
+  printf "%s\n" "${FIELD[7]}" 
 
   interfaces=$(ip addr show | awk '/eth/ && /state UP/ {print $2| "sort"}')
 
@@ -148,7 +126,7 @@ done
 system_time() {
 
   systemtime=$(uptime | awk '{ print $1}')
-    printf "%s\n" "${FIELD[9]} $systemtime"
+    printf "%s\n" "${FIELD[8]} $systemtime"
 }
 
 # Uptime: days hours:minutes
@@ -156,7 +134,7 @@ system_time() {
 time_up() {
 
   timeup=$(uptime |awk -F '[ ,]' ' {print $4, $5, $7}')
-    printf "%s\n" "${FIELD[10]} $timeup"
+    printf "%s\n" "${FIELD[9]} $timeup"
 }
 
 # Storage capacity by volume.
@@ -164,7 +142,7 @@ time_up() {
 disk_storage() {
 
   storage=$(df -ha /volume* |awk '(NR>1) {print $6, $5, $3, $2}')
-    printf "%s\n" "${FIELD[11]}"
+    printf "%s\n" "${FIELD[10]}"
     printf "%s\n" "Name     Used% Used Total"
     printf "%s\n" "$storage"
 }
@@ -194,3 +172,6 @@ main() {
 }
 
 main "$@"
+
+
+
