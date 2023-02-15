@@ -13,8 +13,6 @@
 # Device "eth4" does not exist.
 # Device "eth5" does not exist.
 
-for i in $(seq -w 0 5 $END); do ip addr show eth$i| awk '/eth/ {print $2}'; done
-
 ethernet_devices() {
   # Iterate through ethernet devices (0-5) via 'ip' command
   # awk to match eth and extract column contents.
