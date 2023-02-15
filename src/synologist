@@ -98,6 +98,8 @@ memory() {
     printf "%s\n" "${FIELD[5]} $gB gB"
 }
 
+# Get MAC address and IP address of all Ethernet devices.
+
 ethernet_stats() {
 
   printf "%s\n" "${FIELD[6]}"
