@@ -45,7 +45,9 @@ Sample output:
     Device "eth5" does not exist.
 
     Network stats (active):
-    eth0: 00:11:32:62:3d:3f 172.22.114.159/23
+    eth0: 
+    00:11:32:62:3d:3f 
+    172.22.114.159/23
 
     --------------------
     Time
