@@ -11,7 +11,7 @@ Sample output:
 	Basic Information
 	--------------------
 
-	Server name: CNSANGELAKILAB
+	Server name: SYNOLOGIST
 	DSM version: 7.1.1
 
 	--------------------
@@ -55,7 +55,8 @@ Sample output:
 	Network stats (active):
 	eth4:
 	00:11:32:79:95:1f
-	172.22.115.242/23eth5:
+	172.22.115.242/23
+        eth5:
 	00:11:32:79:95:20
 	169.254.4.191/16
 	--------------------
