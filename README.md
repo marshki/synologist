@@ -7,59 +7,71 @@ Approximates select output of Synology's "Info Center."
 
 Sample output: 
 
-    --------------------
-    Basic Information
-    --------------------
+	--------------------
+	Basic Information
+	--------------------
 
-    Server name: synologist
-    DSM version: 7.1.1
+	Server name: CNSANGELAKILAB
+	DSM version: 7.1.1
 
-    --------------------
-    Hardware
-    --------------------
+	--------------------
+	Hardware
+	--------------------
 
-    Serial number: 1670NMN287200
-    Model name: DS416play-j
-    CPU: Intel(R) Celeron(R) CPU  N3060  @ 1.60GHz
-    Total physical memory: 0.887283 gB
+	Serial number: 1760P5N096700
+	Model name: RS18017xs+
+	CPU: Intel(R) Xeon(R) CPU D-1531 @ 2.20GHz
+	Total physical memory: 31.1293 gB
 
-    --------------------
-    Network
-    --------------------
+	--------------------
+	Network
+	--------------------
 
-    Ethernet stats (all):
-    eth0:
-    00:11:32:62:3d:3f
-    172.22.114.159/23
+	Ethernet stats (all):
+	eth0:
+	00:11:32:79:95:1b
+	169.254.21.82/16
 
-    eth1:
-    00:11:32:62:3d:40
-    169.254.84.242/16
+	eth1:
+	00:11:32:79:95:1c
+	169.254.105.132/16
 
-    Device "eth2" does not exist.
+	eth2:
+	00:11:32:79:95:1d
+	169.254.69.117/16
 
-    Device "eth3" does not exist.
+	eth3:
+	00:11:32:79:95:1e
+	169.254.206.44/16
 
-    Device "eth4" does not exist.
+	eth4:
+	00:11:32:79:95:1f
+	172.22.115.242/23
 
-    Device "eth5" does not exist.
+	eth5:
+	00:11:32:79:95:20
+	169.254.4.191/16
 
-    Network stats (active):
-    eth0: 
-    00:11:32:62:3d:3f 
-    172.22.114.159/23
+	Network stats (active):
+	eth4:
+	00:11:32:79:95:1f
+	172.22.115.242/23eth5:
+	00:11:32:79:95:20
+	169.254.4.191/16
+	--------------------
+	Time
+	--------------------
 
-    --------------------
-    Time
-    --------------------
+	System time: 08:07:34
+	Uptime: 124 days 
 
-    System time: 11:50:39
-    Uptime: 36 days 23:11
+	--------------------
+	Storage
+	--------------------
 
-    --------------------
-    Storage
-    --------------------
-
-    Volume(s):
-    Name     Used% Used Total
-    /volume1 42% 2.6T 6.1T
+	Volume(s):
+	Name     Used% Used Total
+	/volume1 48% 75T 158T
+	/volume2 34% 54T 158T
+	/volume3 47% 73T 158T
+	/volume4 75% 78T 105T
