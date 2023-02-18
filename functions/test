@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Extract eth, MAC address, & IP address.
+
 
 for i in $(seq -w 0 5); do
   if ip addr show eth$i > /dev/null 2>&1; then
