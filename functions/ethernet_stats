@@ -21,9 +21,10 @@ ethernet_devices() {
 }
 
 ethernet_devices
-# Extract eth, MAC address, & IP address.
 
-# Iterate through sequence of nums from 0 to 5
+# Iterate through ethernet devices (0-5) via 'ip' command
+# awk to match eth and extract column contents.
+
 for i in $(seq -w 0 5); do
 
 # Assign iterative num to ip addr show
