@@ -1,26 +1,12 @@
 #!/usr/bin/env bash
 # Extract eth, MAC address, & IP address.
 
-
-for i in $(seq -w 0 5); do
-  if ip addr show eth$i > /dev/null 2>&1; then
-    printf "%s\n" "eth$i: "
-    #printf $(ip link show eth$i | awk '/ether/ {print $2}')
-    #printf $(ip addr show eth$i | awk '/inet / {print $2}')
-  else
-    printf "%s\n" "Device \"eth$i\" does not exist."
-  fi
-done
-
-
-
-#!/usr/bin/env bash
-
 for i in $(seq -w 0 5); do
   if ip addr show eth"$i" > /dev/null 2>&1; then
-    printf "%s\n" "eth$i: $(ip addr show eth"$i" | awk '/ether/' || awk '/inet/')"
-    #printf $(ip link show eth$i | awk '/ether/ {print $2}')
-    #printf $(ip addr show eth$i | awk '/inet / {print $2}')
+    ether=$(ip link show eth$i | awk '/ether/ {print $2}')
+    inet=$(ip addr show eth$i | awk '/inet / {print $2}')
+
+    printf "%s\n" "eth$i: $ether $inet"
   else
     printf "%s\n" "Device \"eth$i\" does not exist."
   fi
