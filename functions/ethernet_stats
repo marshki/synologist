@@ -2,12 +2,8 @@
 # Extract ethernet device assignment, MAC address, and IP address.
 # Print in ascending order.
 # Sample output:
-# eth0:
-# 00:11:32:79:95:1b
-# 169.254.21.82/16
-# eth1:
-# 00:11:32:79:95:1c
-# 169.254.105.132/16
+# eth0: 00:11:32:79:95:1b 169.254.21.82/16
+# eth1: 00:11:32:79:95:1c 169.254.105.132/16
 # Device "eth2" does not exist.
 # Device "eth3" does not exist.
 # Device "eth4" does not exist.
@@ -25,3 +21,25 @@ ethernet_devices() {
 }
 
 ethernet_devices
+# Extract eth, MAC address, & IP address.
+
+# Iterate through sequence of nums from 0 to 5
+for i in $(seq -w 0 5); do
+
+# Assign iterative num to ip addr show
+# send standard output to /dev/null
+
+  if ip addr show eth"$i" > /dev/null 2>&1; then
+
+# awk to extract 'ether' and print second column
+    ether=$(ip link show eth$i | awk '/ether/ {print $2}')
+
+# awk to extract 'inet' and print second column
+    inet=$(ip addr show eth$i | awk '/inet / {print $2}')
+
+# print
+    printf "%s\n" "eth$i: $ether $inet"
+  else
+    printf "%s\n" "Device \"eth$i\" does not exist."
+  fi
+done
