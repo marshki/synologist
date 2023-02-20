@@ -25,22 +25,26 @@ ethernet_devices
 # Iterate through ethernet devices (0-5) via 'ip' command
 # awk to match eth and extract column contents.
 
-for i in $(seq -w 0 5); do
+ethernet_devices() {
 
-# Assign iterative num to ip addr show
-# send standard output to /dev/null
+  for i in $(seq -w 0 5); do
 
-  if ip addr show eth"$i" > /dev/null 2>&1; then
+  # Assign iterative num to ip addr show
+  # send standard output to /dev/null
 
-# awk to extract 'ether' and print second column
-    ether=$(ip link show eth$i | awk '/ether/ {print $2}')
+    if ip addr show eth"$i" > /dev/null 2>&1; then
 
-# awk to extract 'inet' and print second column
-    inet=$(ip addr show eth$i | awk '/inet / {print $2}')
+      # awk to extract 'ether' and print second column
+      ether=$(ip link show eth$i | awk '/ether/ {print $2}')
 
-# print
+      # awk to extract 'inet' and print second column
+      inet=$(ip addr show eth$i | awk '/inet / {print $2}')
+
+  # print
     printf "%s\n" "eth$i: $ether $inet"
   else
     printf "%s\n" "Device \"eth$i\" does not exist."
   fi
 done
+
+}
