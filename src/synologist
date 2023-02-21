@@ -100,7 +100,7 @@ memory() {
 
 # Get MAC address and IP address of ALL Ethernet devices.
 
-ethernet_devices() {
+ethernet_stats() {
   printf "%s\n" "${FIELD[6]}"
  
   for i in $(seq -w 0 5); do
