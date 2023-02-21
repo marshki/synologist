@@ -10,27 +10,12 @@
 # Device "eth5" does not exist.
 
 ethernet_devices() {
-  # Iterate through ethernet devices (0-5) via 'ip' command
-  # awk to match eth and extract column contents.
+  # Iterate through sequence (0-5)
 
-  for i in $(seq -w 0 5 $END);
-    do ip addr show eth$i |awk '/eth/ {print $2}';
-  printf "\n"
-  done
-  
-}
+  for i in $(seq -w 0 5 $END); do
 
-ethernet_devices
-
-# Iterate through ethernet devices (0-5) via 'ip' command
-# awk to match eth and extract column contents.
-
-ethernet_devices() {
-
-  for i in $(seq -w 0 5); do
-
-  # Assign iterative num to ip addr show
-  # send standard output to /dev/null
+    # Assign iterative num to ip addr show
+    # send standard output to /dev/null
 
     if ip addr show eth"$i" > /dev/null 2>&1; then
 
@@ -40,11 +25,11 @@ ethernet_devices() {
       # awk to extract 'inet' and print second column
       inet=$(ip addr show eth$i | awk '/inet / {print $2}')
 
-  # print
     printf "%s\n" "eth$i: $ether $inet"
   else
     printf "%s\n" "Device \"eth$i\" does not exist."
   fi
 done
-
 }
+
+ethernet_devices
