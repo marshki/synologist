@@ -56,3 +56,10 @@ Sample output:
 	/volume2 34% 54T 158T
 	/volume3 47% 73T 158T
 	/volume4 75% 78T 105T
+
+### Tested on the Following Synology Models: 
+
+    DS212j-j
+    DS416play-j
+    RS18017xs+
+
