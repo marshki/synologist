@@ -68,5 +68,7 @@ Sample output:
 |DS2419+    |
 |DS3622xs+  |
 |DS416play-j|
+|RS815rp+-j |
 |RS18017xs+ |
+|RS3621xs+  |
 |SA3400     |
