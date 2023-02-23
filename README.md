@@ -60,6 +60,8 @@ Sample output:
 ### Tested on the Following Synology Models: 
 
     DS212j-j
+    DS1817+-j
+    DS3622xs+
     DS416play-j
     RS18017xs+
     SA3400
