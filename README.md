@@ -61,6 +61,7 @@ Sample output:
 
     DS212j-j
     DS1817+-j
+    DS1819+
     DS3622xs+
     DS416play-j
     RS18017xs+
