@@ -64,6 +64,7 @@ Sample output:
 |---        |
 |DS212j-j   |            
 |DS1517+    |
+|DS1517+-j  |
 |DS1817+-j  |
 |DS1819+    |
 |DS2419+    |
