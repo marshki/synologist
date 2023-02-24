@@ -4,7 +4,7 @@ Command line system information utility for use with Synology's [Disk Station Ma
 
 Approximates select output of Synology's "Info Center."
 
-Sample output: 
+## Sample output 
 
 	--------------------
 	Basic Information
