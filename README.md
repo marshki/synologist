@@ -1,9 +1,8 @@
 # Synologist
 
-Command line system information utility for use with Synology's Disk Station Manager (DSM).
+Command line system information utility for use with Synology's [Disk Station Manager (DSM)](https://www.synology.com/en-us/dsm).
 
 Approximates select output of Synology's "Info Center."
-
 
 Sample output: 
 
@@ -57,12 +56,11 @@ Sample output:
 	/volume3 47% 73T 158T
 	/volume4 75% 78T 105T
 
-### Tested on the Following Synology Models: 
+## Supported Synology Models
 
-
-|Model #    |            
+|Model #    |
 |---        |
-|DS212j-j   |            
+|DS212j-j   |        
 |DS1517+    |
 |DS1517+-j  |
 |DS1817+-j  |
@@ -74,3 +72,7 @@ Sample output:
 |RS18017xs+ |
 |RS3621xs+  |
 |SA3400     |
+
+## Getting Started
+## History
+## License
