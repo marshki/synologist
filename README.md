@@ -2,7 +2,7 @@
 
 Command line system information utility for use with Synology's [Disk Station Manager (DSM)](https://www.synology.com/en-us/dsm).
 
-Approximates select output of Synology's "Info Center."
+Approximates select output of Synology's [Info Center](https://kb.synology.com/en-vn/DSM/help/DSM/AdminCenter/system_info_center?version=7).
 
 ## Sample Output 
 
