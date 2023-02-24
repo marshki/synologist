@@ -74,5 +74,13 @@ Sample output:
 |SA3400     |
 
 ## Getting Started
+
 ## History
+
+| Version| Relase Date|
+| ---    | ---        |
+| v.0.0  |04-FEB-2023 |
+
 ## License
+
+[LICENSE](https://github.com/marshki/synologist/blob/master/LICENSE)
