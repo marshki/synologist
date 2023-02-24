@@ -63,6 +63,7 @@ Sample output:
 |Model #    |            
 |---        |
 |DS212j-j   |            
+|DS1517+    |
 |DS1817+-j  |
 |DS1819+    |
 |DS2419+    |
