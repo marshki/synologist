@@ -75,6 +75,18 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 
 ## Getting Started
 
+__Liftoff:__
+
+Make this script accessible to all users by placing it in: `/usr/local/bin`;
+
+set the executable bit on the file:
+
+`sudo chmod +wx synologist`;
+
+then call it:
+
+`bash synologist`.
+
 ## History
 
 | Version| Relase Date|
