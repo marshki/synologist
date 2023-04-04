@@ -61,6 +61,7 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 |Model #    |
 |---        |
 |DS212j-j   |        
+|DS1515+-j  |
 |DS1517+    |
 |DS1517+-j  |
 |DS1817+-j  |
