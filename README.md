@@ -64,6 +64,7 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 |DS1515+-j  |
 |DS1517+    |
 |DS1517+-j  |
+|DS1621+    |
 |DS1817+-j  |
 |DS1819+    |
 |DS2419+    |
