@@ -58,22 +58,18 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 
 ## "Supported" Synology Models (i.e. tested to run on the following)
 
-|Model #    |
-|---        |
-|DS212j-j   |        
-|DS1515+-j  |
-|DS1517+    |
-|DS1517+-j  |
-|DS1621+    |
-|DS1817+-j  |
-|DS1819+    |
-|DS2419+    |
-|DS3622xs+  |
-|DS416play-j|
-|RS815rp+-j |
-|RS18017xs+ |
-|RS3621xs+  |
-|SA3400     |
+|Disk Station (DS) |Rack Station (RS) |Scalable (SA) |
+|---               |---               |---           |
+|DS212j-j          |RS815rp+-j        |SA3400        |
+|DS1515+-j         |RS18017xs+        |              |
+|DS1517+           |RS3621xs+         |              |
+|DS1517+-j         |
+|DS1621+           |
+|DS1817+-j         |
+|DS1819+           |
+|DS2419+           |
+|DS3622xs+         |
+|DS416play-j       |
 
 ## Getting Started
 
