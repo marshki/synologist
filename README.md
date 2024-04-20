@@ -82,7 +82,7 @@ Make this script accessible to all users by placing it in: `/usr/local/bin`;
 
 set the executable bit on the file:
 
-`sudo chmod +wx synologist`;
+`sudo chmod +r synologist`;
 
 then call it:
 
