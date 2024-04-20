@@ -56,7 +56,7 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 	/volume3 47% 73T 158T
 	/volume4 75% 78T 105T
 
-## "Supported" Synology Models (i.e. tested to run on the following)
+## "Supported" Synology Models (i.e. Synologist was tested to run on the following):
 
 |Disk Station (DS) |Rack Station (RS) |Scalable (SA) |
 |---               |---               |---           |
@@ -70,6 +70,8 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 |DS2419+           |
 |DS3622xs+         |
 |DS416play-j       |
+
+[For reference](https://www.synology.com/en-global/products?)
 
 ## Getting Started
 
