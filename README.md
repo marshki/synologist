@@ -56,7 +56,7 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 	/volume3 47% 73T 158T
 	/volume4 75% 78T 105T
 
-## "Supported" Synology Models (i.e. Synologist was tested to run on the following):
+## "Supported" Synology Models (i.e. Synologist was tested to run on the following:)
 
 |Disk Station (DS) |Rack Station (RS) |Scalable (SA) |
 |---               |---               |---           |
