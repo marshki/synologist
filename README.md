@@ -61,8 +61,8 @@ Approximates select output of Synology's [Info Center](https://kb.synology.com/e
 |Disk Station (DS) |Rack Station (RS) |Scalable (SA) |
 |---               |---               |---           |
 |DS212j-j          |RS815rp+-j        |SA3400        |
-|DS1515+-j         |RS18017xs+        |              |
-|DS1517+           |RS3621xs+         |              |
+|DS1515+-j         |RS18017xs+        |
+|DS1517+           |RS3621xs+         |
 |DS1517+-j         |
 |DS1621+           |
 |DS1817+-j         |
